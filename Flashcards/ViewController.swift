@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBOutlet weak var frontLabel: UILabel!
+    @IBOutlet weak var backLabel: UILabel!
+    
+    @IBAction func didTapOnFlashCard(_ sender: Any) {
+        frontLabel.isHidden = true
+    }
 }
 
