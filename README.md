@@ -8,7 +8,9 @@
 `TODO://` A simple flashcard with a front question view that can be flipped to the back answer view.
 
 ### App Walk-though
-![](https://imgflip.com/gif/4yxo5w)
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/65259944/108645474-f3b92380-74ed-11eb-81df-6e2523d8c82c.gif)
+
 
 
 ## Required
