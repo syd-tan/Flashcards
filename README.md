@@ -8,8 +8,6 @@
 `TODO://` A simple flashcard with a front question view that can be flipped to the back answer view.
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
-
 <img src="https://imgflip.com/gif/4yxo5w" width=200><br>
 
 
