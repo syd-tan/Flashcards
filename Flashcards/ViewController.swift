@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         card.layer.cornerRadius = 20.0
+        frontLabel.layer.cornerRadius = 20.0
+        backLabel.layer.cornerRadius = 20.0
         frontLabel.clipsToBounds = true
         backLabel.clipsToBounds = true
         card.layer.shadowRadius = 15.0
