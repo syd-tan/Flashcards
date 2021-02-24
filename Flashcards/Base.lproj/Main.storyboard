@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yXJ-qB-uK0">
-                                <rect key="frame" x="33" y="227" width="348" height="151"/>
+                                <rect key="frame" x="33" y="175" width="348" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kuala Lumpur" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sap-mp-TO4">
-                                        <rect key="frame" x="0.0" y="0.0" width="348" height="151"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="348" height="198"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -29,11 +29,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is the capital of Malaysia? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypq-qm-sSh">
-                                        <rect key="frame" x="0.0" y="0.0" width="348" height="151"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="348" height="198"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <color key="textColor" systemColor="systemTealColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -43,11 +43,53 @@
                                     <outletCollection property="gestureRecognizers" destination="9jf-51-VxC" appends="YES" id="4Qz-z9-RgC"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8as-lC-Fbx">
+                                <rect key="frame" x="33" y="564" width="348" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <state key="normal" title="Kuala Lumpur">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8A6-zu-aB3"/>
+                                    <outletCollection property="gestureRecognizers" destination="nHz-6G-ab0" appends="YES" id="Qxr-g9-aDj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifU-i0-KnN">
+                                <rect key="frame" x="33" y="695" width="348" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <state key="normal" title="Ipoh">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapButton3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TTl-XJ-GEh"/>
+                                    <outletCollection property="gestureRecognizers" destination="laA-Tz-K5y" appends="YES" id="WeI-BX-1mj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1V-b7-Fuc">
+                                <rect key="frame" x="33" y="435" width="348" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <state key="normal" title="Penang">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SV9-vl-qTd"/>
+                                    <outletCollection property="gestureRecognizers" destination="trg-7c-O7x" appends="YES" id="O3Q-pV-g8q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="Button1" destination="E1V-b7-Fuc" id="XDB-8d-Zmo"/>
+                        <outlet property="Button2" destination="8as-lC-Fbx" id="C6Z-kD-lw4"/>
+                        <outlet property="Button3" destination="ifU-i0-KnN" id="hr4-jC-65e"/>
                         <outlet property="backLabel" destination="sap-mp-TO4" id="cYO-0f-S3f"/>
                         <outlet property="card" destination="yXJ-qB-uK0" id="Xrt-bk-YZ8"/>
                         <outlet property="frontLabel" destination="ypq-qm-sSh" id="c0y-6p-7MM"/>
@@ -57,6 +99,21 @@
                 <tapGestureRecognizer id="9jf-51-VxC">
                     <connections>
                         <action selector="didTapOnFlashCard:" destination="BYZ-38-t0r" id="k7f-2X-82z"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="trg-7c-O7x">
+                    <connections>
+                        <action selector="didTapButton1:" destination="BYZ-38-t0r" id="t7L-uk-ZSK"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="nHz-6G-ab0">
+                    <connections>
+                        <action selector="didTapButton2:" destination="BYZ-38-t0r" id="qf8-yU-1Wz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="laA-Tz-K5y">
+                    <connections>
+                        <action selector="didTapButton3:" destination="BYZ-38-t0r" id="o1R-SS-HYo"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -70,7 +127,7 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray6Color">
+        <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
