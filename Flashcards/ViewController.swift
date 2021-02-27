@@ -66,5 +66,21 @@ class ViewController: UIViewController {
     @IBAction func didTapButton3(_ sender: Any) {
         Button3.isHidden = true
     }
+    
+    func updateFlashcard(question: String, answer: String)  {
+        frontLabel.text = question
+        backLabel.text = answer
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // destination of the segue is the navigation Controller
+        let navigationController = segue.destination as! UINavigationController
+        
+        // the navigation controller only contains a creation view controller
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        //set the FlashcardController property to self
+        creationController.flashcardController = self
+    }
+
 }
 
