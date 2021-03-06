@@ -36,6 +36,14 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8l-GB-YdT">
+                                        <rect key="frame" x="310" y="160" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="✏️ "/>
+                                        <connections>
+                                            <segue destination="oQe-hJ-p4q" kind="presentation" identifier="EditSegue" id="oVJ-VO-pIh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
@@ -150,6 +158,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XL0-f8-Zmn">
+                                <rect key="frame" x="36" y="337" width="341" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tsQ-t0-sye">
+                                <rect key="frame" x="36" y="404" width="341" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LgP-h9-1Ez"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -168,6 +188,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="answerTextField" destination="qMD-5a-v5L" id="Rd7-h2-U6L"/>
+                        <outlet property="option1TextField" destination="XL0-f8-Zmn" id="Czb-6M-05x"/>
+                        <outlet property="option2TextField" destination="tsQ-t0-sye" id="e7R-b1-sbB"/>
                         <outlet property="questionTextField" destination="ECr-Kf-SLY" id="iRi-9B-UUP"/>
                     </connections>
                 </viewController>
@@ -194,6 +216,9 @@
             <point key="canvasLocation" x="253.62318840579712" y="-141.29464285714286"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oVJ-VO-pIh"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -13,9 +13,20 @@ class CreationViewController: UIViewController {
     
     @IBOutlet weak var questionTextField: UITextField!
     @IBOutlet weak var answerTextField: UITextField!
+    @IBOutlet weak var option1TextField: UITextField!
+    @IBOutlet weak var option2TextField: UITextField!
+    
+    var initialQuestion: String?
+    var initialAnswer: String?
+    var initialOption1: String?
+    var initialOption2: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        questionTextField.text = initialQuestion
+        answerTextField.text = initialAnswer
+        option1TextField.text = initialOption1
+        option2TextField.text = initialOption2
 
         // Do any additional setup after loading the view.
     }
@@ -29,9 +40,24 @@ class CreationViewController: UIViewController {
         
         let answerText = answerTextField.text
         
-        flashcardController.updateFlashcard(question: questionText!, answer: answerText!)
+        let option1Text = option1TextField.text
         
-        dismiss(animated: true)
+        let option2Text = option2TextField.text
+        
+        if questionText == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty || option1Text == nil || option1Text!.isEmpty || option2Text == nil || option2Text!.isEmpty
+        {
+            let alert = UIAlertController(title: "Missing Text", message: "Please enter question and answers.", preferredStyle: UIAlertController.Style.alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            
+            alert.addAction(okAction)
+            present(alert, animated: true)
+            
+        } else{
+            flashcardController.updateFlashcard(question: questionText!, answer: answerText!, option1: option1Text!, option2: option2Text!)
+        
+            dismiss(animated: true)
+        }
     }
     
     
