@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct Flashcard {
+    var question: String
+    var answer: String
+}
+
 class ViewController: UIViewController {
     @IBOutlet weak var card: UIView!
     @IBOutlet weak var frontLabel: UILabel!
