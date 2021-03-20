@@ -7,7 +7,7 @@ Now with multiple flashcards and delete feature, with cards being saved from pre
 
 ### App Walk-though
 
-<img src="http://g.recordit.co/ijOZJFssRK.gif"><br>
+<img src="http://g.recordit.co/woC6557CjO.gif"><br>
 
 ## Required
 - [x] User can browse through multiple flashcards
