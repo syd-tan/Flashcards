@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     
     var flashcards = [Flashcard]()
     var currentIndex = 0
+    var correctAnswerButton: UIButton!
     
     func readSavedFlashcards(){
         if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]]{
@@ -52,31 +53,69 @@ class ViewController: UIViewController {
         }
         
         if frontLabel.isHidden == false {
-            Button1.isHidden = false;
-            Button3.isHidden = false;
+            Button1.isEnabled = true;
+            Button2.isEnabled = true;
+            Button3.isEnabled = true;
+            Button1.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            Button2.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            Button3.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+           
         }
+        
     }
     
     
     @IBAction func didTapButton1(_ sender: Any) {
-        Button1.isHidden = true
+        if Button1 == correctAnswerButton{
+            flipFlashcard()
+        }else{
+            frontLabel.isHidden = false
+            Button1.isEnabled = false
+            
+        }
+        if Button1.isEnabled == true{
+            Button1.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        } else{
+            Button1.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        }
     }
     
     
     @IBAction func didTapButton2(_ sender: Any) {
-        flipFlashcard()
+        if Button2 == correctAnswerButton{
+            flipFlashcard()
+        }else{
+            frontLabel.isHidden = false
+            Button2.isEnabled = false
+        }
+        if Button2.isEnabled == true{
+            Button2.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        } else{
+            Button2.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        }
     }
     
     @IBAction func didTapButton3(_ sender: Any) {
-        Button3.isHidden = true
+        if Button3 == correctAnswerButton{
+            flipFlashcard()
+        }else{
+            frontLabel.isHidden = false
+            Button3.isEnabled = false
+        }
+        if Button3.isEnabled == true{
+            Button3.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        } else{
+            Button3.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        }
     }
     
     @IBAction func didTapOnPrev(_ sender: Any) {
         currentIndex = currentIndex - 1
         
-        updateLabels()
+        
         
         updateNextPrevButtons()
+        animatePrevCard()
     }
     @IBAction func didTapOnNext(_ sender: Any) {
         currentIndex = currentIndex + 1
@@ -122,9 +161,16 @@ class ViewController: UIViewController {
         let currentFlashcard = flashcards[currentIndex]
         frontLabel.text = currentFlashcard.question
         backLabel.text = currentFlashcard.answer
-        Button2.setTitle(currentFlashcard.answer, for: .normal)
-        Button3.setTitle(currentFlashcard.option2, for: .normal)
-        Button1.setTitle(currentFlashcard.option1, for: .normal)
+        
+        let buttons = [Button1, Button2, Button3].shuffled()
+        let answers = [currentFlashcard.answer, currentFlashcard.option1, currentFlashcard.option2].shuffled()
+        for (button, answer) in zip(buttons, answers){
+            button?.setTitle(answer, for: .normal)
+            
+            if answer == currentFlashcard.answer{
+                correctAnswerButton = button
+            }
+        }
         
         
     }
@@ -191,7 +237,31 @@ class ViewController: UIViewController {
         
         print("Yay! Flashcards saved to UserDefaults")
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // First start with smaller, invisible flashcard
+        card.alpha = 0.0
+        card.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        Button1.alpha = 0.0
+        Button1.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        Button2.alpha = 0.0
+        Button2.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        Button3.alpha = 0.0
+        Button3.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.card.alpha = 1.0
+            self.card.transform = CGAffineTransform.identity
+            self.Button1.alpha = 1.0
+            self.Button1.transform = CGAffineTransform.identity
+            self.Button2.alpha = 1.0
+            self.Button2.transform = CGAffineTransform.identity
+            self.Button3.alpha = 1.0
+            self.Button3.transform = CGAffineTransform.identity
+        })}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -213,9 +283,11 @@ class ViewController: UIViewController {
         Button2.layer.borderWidth = 3.0
         Button3.layer.borderWidth = 3.0
         
+        
         Button1.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         Button2.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         Button3.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+       
         
         readSavedFlashcards()
         if flashcards.count == 0{
@@ -226,6 +298,7 @@ class ViewController: UIViewController {
         
         
     }
+    
     
     func animateCardOut(){UIView.animate(
         withDuration: 0.2, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)}, completion: {finished in
@@ -240,6 +313,22 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 0.2) { self.card.transform = CGAffineTransform.identity}
         
+    }
+    
+    func animatePrevCard(){
+        UIView.animate(withDuration: 0.2, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x:300, y:0.0)
+        }, completion: {finished in
+            self.updateLabels()
+            self.animatePrevCardIn()
+        })
+    }
+    
+    func animatePrevCardIn(){
+        card.transform = CGAffineTransform.identity.translatedBy(x: -300, y: 0.0)
+        UIView.animate(withDuration: 0.2){
+            self.card.transform = CGAffineTransform.identity
+        }
     }
 }
 
