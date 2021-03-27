@@ -98,31 +98,30 @@
                                     <outletCollection property="gestureRecognizers" destination="trg-7c-O7x" appends="YES" id="O3Q-pV-g8q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-92-a0Y">
-                                <rect key="frame" x="191" y="764" width="35" height="77"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-92-a0Y">
+                                <rect key="frame" x="175" y="777" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="54"/>
-                                <state key="normal" title="+">
+                                <state key="normal" image="addButton">
                                     <color key="titleColor" systemColor="systemBlueColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="oQe-hJ-p4q" kind="presentation" id="LMP-av-eot"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13D-2n-2u4">
-                                <rect key="frame" x="34" y="788" width="40" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13D-2n-2u4">
+                                <rect key="frame" x="45" y="777" width="100" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Prev"/>
+                                <state key="normal" title="Prev" image="arrowLeft"/>
+                                <state key="disabled" image="arrowLeftDisabled"/>
                                 <connections>
                                     <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NRs-Ij-veT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8W-hP-5gE">
-                                <rect key="frame" x="341" y="788" width="41" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8W-hP-5gE">
+                                <rect key="frame" x="312" y="776" width="102" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Next" image="arrowRight"/>
+                                <state key="disabled" image="arrowRightDisabled"/>
                                 <connections>
                                     <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IaC-Ep-Wte"/>
                                 </connections>
@@ -248,6 +247,11 @@
         <segue reference="oVJ-VO-pIh"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="addButton" width="64" height="64"/>
+        <image name="arrowLeft" width="64" height="64"/>
+        <image name="arrowLeftDisabled" width="64" height="64"/>
+        <image name="arrowRight" width="64" height="64"/>
+        <image name="arrowRightDisabled" width="64" height="64"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
