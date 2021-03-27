@@ -1,5 +1,25 @@
-## Simple Flashcard
+## Simple Flashcards
 
+## Lab 4
+
+### App Description
+Now with splash screen, app icon, buttons, and animations upon loading and changing cards, as well as randomized multiple choice answers. 
+
+### App Walk-though
+
+<img src="http://g.recordit.co/EqHlBnsdXF.gif"><br>
+
+## Required
+- [x] User should see the app icon 
+- [x] User should see a splash screen
+- [x] User should see an flip animation when revealing the answer
+- [x] User should see a slide animation when going to the next flashcard
+- [x] User should see a slide animation when going to the previous flashcard
+- [x] Push code to GitHub
+## Optional
+- [x] User should see a nicer flaschard with rounded corners, shadows, and animating when showing the first time
+- [x] User should see all views properly layout when using the app on a phone of different sizes
+- [x] Correct answer in multiple choice should be random
 ## Lab 3
 
 ### App Description
@@ -24,7 +44,7 @@ Now with multiple flashcards and delete feature, with cards being saved from pre
 You can now customize your flashcard by creating your own questions and answers, or editing the existing options!
 
 ### App Walk-though
-<img src="http://g.recordit.co/GTtRQdUTEa.gif" width=200><br>
+<img src="http://g.recordit.co/GTtRQdUTEa.gif"><br>
 
 ## Required
 - [x] User can open the creation screen
